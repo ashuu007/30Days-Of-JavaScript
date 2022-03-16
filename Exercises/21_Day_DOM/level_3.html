@@ -26,7 +26,7 @@
         const h2 = document.querySelector('h2');
         const ul = document.querySelector('ul');
         const li = document.querySelectorAll('li');
-        const showTime = document.querySelector('#time');
+        const showTime = document.getElementById('time');
         
         h1.style.fontSize = '1.8rem';
         
@@ -34,18 +34,23 @@
             font-size: 1rem;
             color: blue;
             text-decoration: underline}
-        .wrapper {
-            text-align: center;
-            width: 500px;
-            margin: auto;
-        }
-        li {
-            list-style: none;
-            padding: 1rem 1rem;
-            margin: 1px;
-            text-align: left;
-            width: 100%;
-        }`;
+          .wrapper {
+              text-align: center;
+              width: 500px;
+              margin: auto;
+              padding: 0;
+          }
+          li {
+              list-style: none;
+              padding: 1rem 1rem;
+              margin: 2px 0px;
+              text-align: left;
+              width: 90%;
+          }
+          #time {
+            display: inline-block;
+            padding: 10px;
+          }`;
 
         let complete = /done/gi
         let ongoing = /ongoing/gi
@@ -62,16 +67,23 @@
 
         const now = new Date();
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        setInterval(() => {
-          const year = now.getFullYear();
-          const month = monthNames[now.getMonth()];
-          const date = now.getDate();
-          const hour = now.getHours();
-          const minute = now.getMinutes();
-          const second = now.getSeconds();
 
-          const currentTime = `${month} ${date},${year} ${hour}:${minute}:${second}`;
+        setInterval(() => {
+          let year = now.getFullYear();
+          let month = monthNames[now.getMonth()];
+          let date = now.getDate();
+          let hour = now.getHours();
+          let minute = now.getMinutes();
+          let second = now.getSeconds();
+
+          let currentTime = `${month} ${date},${year} ${hour}:${minute}:${second}`;
           showTime.innerHTML = currentTime;
+          console.log(currentTime);
+
+          let r = Math.floor((Math.random() * 255)) + 1;
+          let g = Math.floor((Math.random() * 255)) + 1;
+          let b = Math.floor((Math.random() * 255)) + 1;
+          showTime.style.background = `rgb(${r}, ${g}, ${b})`;
         }, 1000);
     </script>
   </body>
