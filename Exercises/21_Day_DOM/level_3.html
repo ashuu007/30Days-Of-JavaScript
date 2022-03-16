@@ -8,7 +8,7 @@
   <body>
     <div class="wrapper">
         <h1>Asabeneh Yetayeh challenges in <span>2020</span></h1>
-        <h2>30DaysOfJavaScript Challenge</h2>
+        <h2 id="challenge">30DaysOfJavaScript Challenge</h2>
         <h2 id="time"></h2>
         <ul>
             <li>30DaysOfPython Challenge Done</li>
@@ -30,21 +30,49 @@
         
         h1.style.fontSize = '1.8rem';
         
-        style.innerHTML = `h2 {
+        style.innerHTML = `#challenge {
             font-size: 1rem;
             color: blue;
             text-decoration: underline}
         .wrapper {
             text-align: center;
+            width: 500px;
+            margin: auto;
         }
         li {
             list-style: none;
-            line-height: 1.5rem;
-            background-color: red;
+            padding: 1rem 1rem;
             margin: 1px;
             text-align: left;
             width: 100%;
         }`;
+
+        let complete = /done/gi
+        let ongoing = /ongoing/gi
+        let coming = /coming/gi
+        for (let i = 0; i < li.length; i++) {
+          if (complete.test(li[i].innerText)) {
+            li[i].style.background = "green";
+          } else if(ongoing.test(li[i].innerHTML)) {
+            li[i].style.background = 'yellow';
+          } else {
+            li[i].style.background = 'red';
+          }
+        }
+
+        const now = new Date();
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        setInterval(() => {
+          const year = now.getFullYear();
+          const month = monthNames[now.getMonth()];
+          const date = now.getDate();
+          const hour = now.getHours();
+          const minute = now.getMinutes();
+          const second = now.getSeconds();
+
+          const currentTime = `${month} ${date},${year} ${hour}:${minute}:${second}`;
+          showTime.innerHTML = currentTime;
+        }, 1000);
     </script>
   </body>
 </html>
