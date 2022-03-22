@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries</title>
+    
 </head>
 <body>
     <div id="container">
@@ -20,6 +21,36 @@
             country.innerHTML = countries[i];
             container.appendChild(country);
         }
+
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerText = `
+        * {
+            font-family: 'Lucida Sans';
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width: 800px;
+        }
+
+        .country {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid rgb(233, 230, 230);
+            margin: 1px;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+        }
+        `;
+        
+        document.body.appendChild(style);
+        
     </script>
 </body>
 </html>
