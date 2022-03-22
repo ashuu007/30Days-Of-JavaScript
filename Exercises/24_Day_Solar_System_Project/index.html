@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Solar System: Document Object Model:30 Days Of JavaScript</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+	<style>
+		* {
+			font-family: Montserrat;
+			text-align: center;
+		}
+
+		body {
+			background: url('images/galaxy.gif');
+			color: white;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+		}
+
+		select,
+		input,
+		button {
+			padding: 5px;
+			margin-top: 5vh;
+		}
+
+		button {
+			color: white;
+			background-color: grey;
+		}
+
+		main {
+			background: #4747477a;
+			padding: 30px 10px;
+			min-width: 900px;
+			margin: 10px;
+			border-radius: 5px;
+		}
+
+		.flex-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.description {
+			background-color: #5e5c5c5d;
+			padding: 10px 50px;
+			display: none;
+			margin-left: 10px;
+			place-items: center;
+		}
+
+		.description div {
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			background-color: #9c9a9ab6;
+			font-weight: bold;
+			margin-top: 10px;
+
+			display: grid;
+			place-items: center;
+		}
+
+		.planet-image{
+			height: 400px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<header>
+		<h1>Calculate a weight of an object on a planet</h1>
+
+		<input type="text" id="mass" placeholder="Mass in Kilogram" />
+		<select>
+			<option value='none'>--select planet-- </option>
+			<option value="earth">Earth</option>
+			<option value="jupiter">jupiter</option>
+			<option value="mars">mars</option>
+			<option value="mercury">mercury</option>
+			<option value="moon">moon</option>
+			<option value="neptune">neptune</option>
+			<option value="saturn">saturn</option>
+			<option value="pluto">pluto</option>
+			<option value="uranus">uranus</option>
+			<option value="venus">venus</option>
+		</select>
+		<button>Calculate weight</button>
+
+	</header>
+	<main>
+		<div class="flex-container">
+			<div class="flex-item image">
+				<img src='./images/earth.png' class="planet-image" />
+			</div>
+			<div class="flex-item description"></div>
+
+		</div>
+
+
+	</main>
+
+
+
+
+
+	<script src="./main.js"></script>
+</body>
+
+</html>

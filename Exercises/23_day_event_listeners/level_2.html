@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>30DaysOfJavaScript:23 Day: Keyboard Key </title>
+</head>
+
+<body>
+
+    <!-- <h1 class="container">You pressed <span>d</span></h1>
+    <h1 class="container" id="keyNum">113</h1> -->
+
+	<!-- <script src="./scripts/main.js"></script> -->
+    <script>
+        const keyName = document.createElement('h1');
+        const keyNum = document.createElement('h1');
+
+        keyName.className = 'container';
+        keyName.id = 'keyName';
+        keyNum.className = 'container';
+        keyNum.id = 'keyNum';
+    
+        keyName.innerHTML = "Press any keyboard key";
+        keyNum.style.display = 'none';
+        document.body.addEventListener('keyup', e => {
+            keyName.innerHTML = `You pressed <span>${e.key}</span>`;
+            keyNum.style.display = 'unset';
+            keyNum.innerHTML = e.keyCode;
+        })
+
+        const style = document.createElement('style');
+
+        style.innerHTML = `
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+        }
+
+        .container {
+            padding: 10px 20px;
+            box-shadow: 2px 2px 4px grey;
+        }
+
+        span, #keyNum {
+            color: green;
+        }
+        `;
+
+        document.body.append(keyName, keyNum);
+        document.head.append(style);
+        
+    </script>
+
+</body>
+
+</html>
