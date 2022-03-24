@@ -1,0 +1,81 @@
+* {
+    font-family: Montserrat;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+body {
+    background-color: #edeff1;
+}
+
+header {
+    background-color: #edeff1;
+    padding: 20px;
+    box-shadow: inset -0px -2px 2px rgb(209, 208, 208);
+}
+
+h1 {
+    color: #f2a93b;
+    font-size: 3rem;
+}
+
+.graph-title,
+.graph-buttons {
+    background-color: #edeff1;
+    padding: 10px;
+}
+
+button {
+    margin: 4px;
+    margin-top: 20px;
+    background-color: #f2a93b;
+    padding: 7px 15px;
+    border: none;
+}
+
+.graph-title {
+    padding-top: 2px;
+    padding-bottom: 12px;
+    font-weight: normal;
+}
+
+.graphs {
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #edeff1;
+    box-shadow: -2px -2px 2px #d1d0d0,
+    2px 2px 2px #d1d0d0;
+    border-radius: 5px;
+}
+
+#stat {
+    width: 900px;
+    margin: auto;
+}
+
+.countryGraph {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.countryGraph p:not(:nth-child(2)) {
+    width: 200px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.graphBar {
+    width: 60vw;
+    display: flex;
+    align-items: flex-start;
+}
+
+.bar {
+    height: 40px;
+    background: #f2a93b;
+}
